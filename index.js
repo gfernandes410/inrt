@@ -1,6 +1,8 @@
-import express from "express";
 import {getEnvValue} from './utils/environment.js';
+import express from "express";
+import mongoose from 'mongoose';
 import routes from './http/routes/index.js';
+import database from './db/mongoDb.js';
 
 console.log('Started')
 

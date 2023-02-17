@@ -4,7 +4,7 @@
 		"checkJs": true,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
-		"lib": ["es2020", "DOM"],
+		"lib": ["es2020", "DOM", "dom.iterable"],
 		"module": "es2020",
 		"moduleResolution": "node",
 		"noEmit": true,
