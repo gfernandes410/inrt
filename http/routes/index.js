@@ -1,6 +1,6 @@
 import express from 'express';
 import publicRoutes from './public/index.js'
-import authRoutes from './auth/index.js'
+import protectedRoutes from './protected/index.js'
 import authorize from './../ middleware/authorize.js'
 
 const router = express.Router();
@@ -13,7 +13,7 @@ publicRoutes.forEach((route) => {
     )
 })
 
-authRoutes.forEach((route) => {
+protectedRoutes.forEach((route) => {
     router.use(
         `/${version}/secure/${route.path}`,
         authorize,
