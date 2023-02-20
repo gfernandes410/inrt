@@ -23,7 +23,7 @@ export default async function authorize(request, response, next) {
         switch (type) {
             case 'Basic':
                 request.user = {
-                    id: '123',
+                    id: credentials,
                 };
                 break;
         
