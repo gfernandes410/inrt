@@ -2,9 +2,10 @@ import db from '../../db/conn.js';
 import userCreate from './seeder/user.js'
 
 /**
-* @typedef {'User'} ModelName
+* @typedef {'user'} ModelName
 **/
 
+/** @type {ModelName[]} */
 const seederList = [
     'user'
 ];
@@ -18,6 +19,8 @@ function remove(type) {
 
 /**
  * @param {ModelName} type
+ * //TODO implement user type
+ * @param {any} payload
  */
 function createModel(type, payload) {
 	return db.collection(type).insertMany(payload);
