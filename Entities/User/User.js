@@ -56,4 +56,13 @@ export default class User extends Entity {
         this.#password = value;
     }
 
+    toObject() {
+        return {
+            _id: this._id.value,
+            email: this.email.value,
+            name: this.fulltName,
+            password: this.password.value,
+        }
+    }
+
 };

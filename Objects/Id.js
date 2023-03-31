@@ -1,9 +1,13 @@
+/**
+ * @typedef {import('mongodb').ObjectId} ObjectId
+ */
+
 import ValueObject from './ValueObject.js';
 
 export default class Id extends ValueObject{
     /**
 	 * Create an Id.
-	 * @param {string} value
+	 * @param {ObjectId} value
 	 */
 	constructor(value) {
 		super();
