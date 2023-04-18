@@ -1,4 +1,4 @@
-import authorize from '../middleware/authorize.js'
+import authorize from '../Middleware/Authorize.js'
 import express from 'express';
 import protectedRoutes from './protected/index.js'
 import publicRoutes from './public/index.js'

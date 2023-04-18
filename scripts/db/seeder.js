@@ -1,4 +1,4 @@
-import db from '../../db/conn.js';
+import db from '../../Db/conn.js';
 import userCreate from './seeder/user.js'
 
 /**

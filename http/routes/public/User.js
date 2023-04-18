@@ -4,15 +4,18 @@ import Password from '../../../Objects/Password.js';
 import User from '../../../Entities/User/index.js';
 import resolveModel from '../../../Helpers/resolveModel.js';
 import IdFactory from '../../../Factories/Id/index.js';
+import CreateUserController from '../../Controller/User/Create.js';
 
 const router = express.Router();
 
 router.get('/ping',(request, response) => {
     console.log('Pong!')
-    response.send('Pong!');
+    response.send('Pon22g!');
 })
 
-router.get('/ping/test',(request, response) => {
+router.post('',(request, response) => {
+
+    new CreateUserController().handle(request)
 
     const user = new User({
         id:  new IdFactory().create(),
@@ -24,17 +27,9 @@ router.get('/ping/test',(request, response) => {
    
     const con = resolveModel('users');
 
-    console.log('--------------------------------');
-    console.log('http/routes/public/ping.js:28');
-    console.log('',);
-    console.log('user',user.toObject());
-    console.log('');
-    console.log('--------------------------------');
-
     con.insertOne(user.toObject());
 
-
-    console.log('Pong!')
+    console.log('created user!')
     response.send('Pong!');
 })
 

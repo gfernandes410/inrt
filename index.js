@@ -1,7 +1,7 @@
-import {getEnvValue} from './utils/environment.js';
+import {getEnvValue} from './Utils/environment.js';
 import bodyParser from "body-parser";
 import express from "express";
-import routes from './http/routes/index.js';
+import routes from './Http/Routes/index.js';
 
 console.log('Started')
 

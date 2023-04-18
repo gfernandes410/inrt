@@ -7,6 +7,9 @@ import CreateUser from './../../../Services/CreateUser/CreateUser.js';
 
 export default class CreateUserController extends Controller {
 
+    /**
+     * @param {any} request // TO-DO fix
+     */
     async execute(request) {
         await new CreateUser().execute(request);
     }

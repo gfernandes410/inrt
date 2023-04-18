@@ -1,5 +1,5 @@
 
-import ping from './ping.js';
+import ping from './Ping.js';
 
 const authRoutes = [
     {path: '', route: ping}
