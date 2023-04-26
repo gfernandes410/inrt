@@ -1,4 +1,4 @@
-import {getEnvValue} from '../utils/environment.js';
+import {getEnvValue} from '../Utils/environment.js';
 import { MongoClient } from "mongodb";
 
 const connectionString = getEnvValue('DB_HOST');

@@ -3,10 +3,15 @@
 import Entity from '../Entitty/Entity.js';
 
 export default class User extends Entity {
-    #email;
-    #firstName;
-    #lastName;
-    #password;
+    
+    /**
+     * @protected
+     * @type {Properties['email']}
+     */
+    _email;
+    _firstName;
+    _lastName;
+    _password;
     
     /**
      * 
@@ -14,54 +19,54 @@ export default class User extends Entity {
      */
     constructor(properties) {
         super(properties.id);
-        this.#email = properties.email;
-        this.#firstName = properties.firstName;
-        this.#lastName = properties.lastName;
-        this.#password = properties.password;
+        this._email = properties.email;
+        this._firstName = properties.firstName;
+        this._lastName = properties.lastName;
+        this._password = properties.password;
     }
 
     get email() {
-        return this.#email;
+        return this._email;
     }
 
     set email(value) {
-        this.#email = value;
+        this._email = value;
     }
 
     get fulltName() {
-        return `${this.#firstName} ${this.#lastName}`;
+        return `${this._firstName} ${this._lastName}`;
     }
 
     get firstName() {
-        return this.#firstName;
+        return this._firstName;
     }
 
     set firstName(value) {
-        this.#firstName = value;
+        this._firstName = value;
     }
 
     get lastName() {
-        return this.#firstName;
+        return this._firstName;
     }
 
     set lastName(value) {
-        this.#firstName = value;
+        this._firstName = value;
     }
 
     get password() {
-        return this.#password;
+        return this._password;
     }
 
     set password(value) {
-        this.#password = value;
+        this._password = value;
     }
 
     toObject() {
         return {
             _id: this._id.value,
-            email: this.email.value,
+            email: this._email.value,
             name: this.fulltName,
-            password: this.password.value,
+            password: this._password.value,
         }
     }
 

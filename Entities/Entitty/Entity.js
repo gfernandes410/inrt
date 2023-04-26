@@ -1,6 +1,5 @@
 import Id from '../../Objects/Id.js';
 
-
 export default class Entity {
 
     /**
@@ -16,5 +15,4 @@ export default class Entity {
     constructor(id) {
         this._id = id;
     }
-
 }

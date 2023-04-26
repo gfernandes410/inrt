@@ -1,12 +1,12 @@
 
 /**
-* @typedef {import('./authorize').BasicUser} BasicAuthUserCredentials
-* @typedef {import('./authorize').HttpNextFunction} NextFunction
-* @typedef {import('./authorize').HttpResponse} Response
-* @typedef {import('./authorize').HttpResquest} Request
-* @typedef {import('./authorize').PreperPropsResult} PreperPropsResult
-* @typedef {import('./authorize').RequestAuthenticatedUser} RequestAuthenticatedUser
-* @typedef {import('./authorize').BasicUser} BasicAuthUser
+* @typedef {import('./Authorize').BasicUser} BasicAuthUserCredentials // TO-DO fix type error
+* @typedef {import('./Authorize').HttpNextFunction} NextFunction // TO-DO fix type error
+* @typedef {import('./Authorize').HttpResponse} Response // TO-DO fix type error
+* @typedef {import('./Authorize').HttpResquest} Request // TO-DO fix type error
+* @typedef {import('./Authorize').PreperPropsResult} PreperPropsResult // TO-DO fix type error
+* @typedef {import('./Authorize').RequestAuthenticatedUser} RequestAuthenticatedUser // TO-DO fix type error
+* @typedef {import('./Authorize').BasicUser} BasicAuthUser // TO-DO fix type error
 */
 
 /**

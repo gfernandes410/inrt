@@ -2,7 +2,7 @@ import Email from '../../../Objects/EmailAddress.js';
 import express from 'express';
 import Password from '../../../Objects/Password.js';
 import User from '../../../Entities/User/index.js';
-import resolveModel from '../../../helpers/resolveModel.js';
+import resolveModel from '../../../Helpers/resolveModel.js';
 import IdFactory from '../../../Factories/Id/index.js';
 
 const router = express.Router();
