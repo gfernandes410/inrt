@@ -8,10 +8,10 @@ export default class Controller {
     /**
      * @param {any} httpRequest
      */
-    handle(httpRequest) {
+    async handle(httpRequest) {
         this.validate(httpRequest);
         this.#request = this.mapHttpRequestToResquest(httpRequest);
-        this.execute(httpRequest)
+        return await this.execute(httpRequest)
     }
 
     execute(httpRequest) {

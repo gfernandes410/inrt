@@ -10,8 +10,8 @@ router.get('/ping',(request, response) => {
     response.send('Pong!');
 })
 
-router.post('',(request, response) => {
-    new CreateUserController().handle(request);
+router.post('', async (request, response) => {
+    await new CreateUserController().handle(request);
 })
 
 export default router;

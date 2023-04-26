@@ -17,7 +17,7 @@ export default class CreateUser {
     async execute(request) {
         const user = this._createUser(request);
 
-        this.#conn.insertOne(user.toObject());
+        await this.#conn.insertOne(user.toObject());
 
         return user.toObject();
     }

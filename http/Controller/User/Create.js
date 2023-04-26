@@ -11,7 +11,9 @@ export default class CreateUserController extends Controller {
      * @param {any} request // TO-DO fix
      */
     async execute(request) {
-        await new CreateUser().execute(request);
+        const controller = new CreateUser();
+
+        return await controller.execute(request);
     }
 
     /**
