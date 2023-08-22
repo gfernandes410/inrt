@@ -17,9 +17,16 @@ export default class CreateUser {
     async execute(request) {
         const user = this._createUser(request);
 
-        await this.#conn.insertOne(user.toObject());
+        console.log('--------------------------------');
+        console.log('Services/CreateUser/CreateUser.js:20');
+        console.log('',);
+        console.log('user',user.toObject());
+        console.log('');
+        console.log('--------------------------------');
 
-        return user.toObject();
+        await this.#conn.insertOne(user);
+
+        return user;
     }
 
     /**

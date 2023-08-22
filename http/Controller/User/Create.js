@@ -13,7 +13,7 @@ export default class CreateUserController extends Controller {
     async execute(request) {
         const controller = new CreateUser();
 
-        return await controller.execute(request);
+        const test =  await controller.execute(request);
     }
 
     /**
