@@ -11,9 +11,10 @@ export default class Controller {
     async handle(httpRequest) {
         this.validate(httpRequest);
         this.#request = this.mapHttpRequestToResquest(httpRequest);
-        return await this.execute(httpRequest)
+        return this.execute(this.#request)
     }
 
+    // @ts-ignore -- used on son classes
     execute(httpRequest) {
         throw new Error('This method should be implemented');
     }
