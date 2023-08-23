@@ -24,15 +24,7 @@ router.get('/ping/test',(request, response) => {
    
     const con = resolveModel('users');
 
-    console.log('--------------------------------');
-    console.log('http/routes/public/ping.js:28');
-    console.log('',);
-    console.log('user',user.toObject());
-    console.log('');
-    console.log('--------------------------------');
-
     con.insertOne(user.toObject());
-
 
     console.log('Pong!')
     response.send('Pong!');
