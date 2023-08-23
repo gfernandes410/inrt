@@ -1,5 +1,6 @@
 /**
- * @typedef {import('./CreateUserHttpRequest').default} CreateUserHttpRequest
+ * @typedef {import('./CreateUserHttpRequest').default} HttpRequest
+ * @typedef {import('./CreateUserRequest').default} CreateUserRequest
  */
 
 import Controller from "../Controller.js";
@@ -11,13 +12,11 @@ export default class CreateUserController extends Controller {
      * @param {any} request // TO-DO fix
      */
     async execute(request) {
-        const controller = new CreateUser();
-
-        return await controller.execute(request);
+        return new CreateUser().execute(request);
     }
 
     /**
-     * @param {CreateUserHttpRequest} httpRequest
+     * @param {HttpRequest} httpRequest
     * @returns {boolean}
      */
     validate(httpRequest) {
@@ -26,14 +25,15 @@ export default class CreateUserController extends Controller {
     }
 
     /**
-     * @param {CreateUserHttpRequest} httpRequest
+     * @param {HttpRequest} httpRequest
+     * @returns {CreateUserRequest} 
      */
     mapHttpRequestToResquest(httpRequest) {
         return {
-            email: httpRequest.email,
-            firstName: httpRequest.first_name,
-            lastName: httpRequest.last_name,
-            password: httpRequest.password,
+            email: httpRequest.body.email,
+            firstName: httpRequest.body.first_name,
+            lastName: httpRequest.body.last_name,
+            password: httpRequest.body.password,
         }
     }
 }
