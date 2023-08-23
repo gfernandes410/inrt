@@ -1,38 +1,43 @@
+/**
+ * @typedef {import('../../Http/Controller/User/CreateUserRequest').default} CreateUserRequest
+ */
+
 import Email from '../../Objects/EmailAddress.js';
 import IdFactory from '../../Factories/Id/index.js';
 import Password from '../../Objects/Password.js';
-import resolveModel from '../../Helpers/resolveModel.js';
-import User from '../../Entities/User/index.js';
+import User from '../../Entities/User/User.js';
+import UserRepository from '../../Repositories/User/UserRepository.js';
+
 export default class CreateUser {
 
-    #conn;
+    #userRepository;
 
     constructor() {
-        this.#conn = resolveModel('users');
+        this.#userRepository = new UserRepository();
     }
 
     /**
-     * @param {any} request // TO-DO implement type
+     * @param {CreateUserRequest} request
      */
     async execute(request) {
         const user = this._createUser(request);
 
-        await this.#conn.insertOne(user.toObject());
+        await this.#userRepository.create(user);
 
         return user.toObject();
     }
 
     /**
-     * @param {any} request // TO-DO implement type
+     * @param {CreateUserRequest} request
      * @return {User}
      */
     _createUser(request) {
         return new User({
             id:  new IdFactory().create(),
-            email: new Email(request.body.email),
-            firstName: request.body.firstName,
-            lastName: request.body.lastName,
-            password: new Password(request.body.passoword)
+            email: new Email(request.email),
+            firstName: request.firstName,
+            lastName: request.lastName,
+            password: new Password(request.password)
         });
     }
 
